@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;1,100;1,200;1,400;1,500;1,600;1,700&display=swap');
+/**Root Variables**/
+:root{
+    --color-primary:#7380ec;
+    --color-danger:#ff7782;
+    --color-success:#41f1b6;
+    --color-warning:#ffbb55;
+    --color-white:#fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light:#dce1eb;
+    --color-dark:#363949;
+    --color-light:rgba(132, 139, 200, 0.18);
+    --color-primary-variant:#111e88;
+    --color-dark-variant:#677483;
+    --color-background:#f6f6f9;
+
+    --card-border-radius:2rem;
+    --border-radius-1:0.4rem;
+    --border-radius-2:0.8rem;
+    --border-radius-3:1.2rem;
+
+    --card-padding:1.8rem;
+    --padding1:1.2rem;
+--box-shadow: 0 2rem 3rem var(--color-light);
+}
+/*************Dark Theme***************/
+.dark-theme-variables{
+    --color-background:#181a1e;
+    --color-white:#202528;
+    --color-dark:#edeffd;
+    --color-dark-variant:#a3bdcc;
+    --color-light:rgba(0, 0, 0, 0.4);
+    --box-shadow:0 2rem 3rem var(--color-light);
+}
+*{
+
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html{
+    font-size: 13px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    font-size: 0.88rem;
+    font-family: poppons, sans-serif;
+    color: var(--color-dark);
+}
+.container{
+    width:96%;
+    display: grid;
+    grid-template-columns: 12rem auto 25rem;
+    gap: 1.8rem;
+    margin: 0 auto;
+}
+h2{
+    font-size: 1.6rem;
+}
+h3{
+    font-size: 0.88rem;
+}
+h4{
+   font-size:0.88rem;
+}
+h5{
+    font: 0.5rem;
+}
+
+.primary{
+    color: var(--color-primary);
+}
+.danger{
+    color: var(--color-danger);
+}
+.success{
+    color: var(--color-success);
+}
+.warning{
+    color: var(--color-warning);
+}
+.text-muted{
+    color: var(--color-info-dark);
+}
+img{
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+svg{
+    height: 7rem;
+    width: 7rem;
+}
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    background-color: var(--color-info-light);
+}
+i{
+    font-size: 1rem;
+}
+aside{
+    
+    height: 100vh;
+    cursor: pointer;
+}
+aside .top{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.88rem;
+   
+    
+}
+aside .top .close{
+    display: none;
+}
+aside .logo{
+    display: flex;
+    gap: 0.88rem;
+    
+}
+aside .siderbar{
+    margin-top: 2rem;
+    height: 3rem;
+}
+aside .siderbar a{
+    display: flex;
+    align-items: center;
+    gap: 0.88rem;
+    grid-area: 0.88rem;
+    height: 3.4rem;
+    margin-left: 2rem;
+    color: var(--color-dark-variant);
+    position: relative;
+    transition: all 300ms ease;
+}
+aside .siderbar a:hover{
+    margin-left: 0.88rem;
+
+}
+aside .siderbar a.active{
+    background-color: var(--color-info-light);
+    color: var(--color-primary);
+    margin-left:0;
+    transition: all 300ms ease;
+}
+aside .siderbar a.active:hover{
+    margin-left: 0.88rem;
+}
+aside .siderbar a.active::before{
+    content: "";
+    height: 100%;
+    width: 6px;
+    background-color: var(--color-primary-variant);
+    margin-left:0
+  
+}
+aside .siderbar a.active i{
+    margin-left: calc(2rem - 14px);
+}
+
+aside .siderbar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+aside .siderbar a h3{
+    font-size: 0.88rem;
+}
+aside .siderbar h3 .message-count{
+
+    background-color: var(--color-danger);
+    padding: 0.5rem 1.2rem;
+    border-radius:var(--border-radius-1);
+    color: var(--color-white);
+}
+/******************************************************MAIN*********************************************/
+main{
+    margin-top:2rem;
+}
+main h2{
+    margin-bottom: 0.8rem;
+}
+main .date{
+    background-color: var(--color-light);
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: var(--border-radius-1);
+    box-shadow: var(--box-shadow);
+}
+main .date input[type="date"]{
+    background-color: transparent;
+    border: none;
+}
+main .insights{
+    margin-top: 0.88rem;
+    display: flex;
+    gap: 1rem;
+}
+main .insights > div{
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+main .insights > div:hover{
+    box-shadow: none;
+}
+main .insights > div .profile-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+}
+main .insights > div .profile-photo i{
+    font-size: 1.6rem;
+}
+main .insights  .sales .profile-photo{
+    background-color: var(--color-primary);
+}
+main .insights  .expenses .profile-photo{
+    background-color: var(--color-danger);
+}
+main .insights  .income .profile-photo{
+    background-color: var(--color-success);
+}
+main .insights > div .middle{
+    display: flex;
+    gap: 0.8rem;
+}
+main .insights > div .middle .left{
+    margin-top: 0.88rem;
+}
+main .insights > div .middle .left h1{
+    margin-top: 1rem;
+}
+main .insights > div .middle .progress{
+    position: relative;
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+   
+}
+main .insights > div .middle .progress svg circle{
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 14px;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 200px;
+    stroke-dashoffset: 30;
+}
+main .insights .sales .middle .progress svg circle{
+    stroke-dasharray: 200;
+    stroke-dashoffset: -30;
+}
+main .insights .expenses .middle .progress svg circle{
+    stroke-dasharray: 180;
+    stroke-dashoffset: 20;
+}
+main .insights .income .middle .progress svg circle{
+    stroke-dasharray: 210;
+    stroke-dashoffset: 80;
+}
+main .insights > div .middle .progress p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+main .recent-orders{
+    margin-top: 1rem;
+}
+main .recent-orders table{
+    width: 100%;
+    background-color: var(--color-white);
+    text-align: center;
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+main .recent-orders table:hover{
+    box-shadow: none;
+}
+main .recent-orders table tbody tr{
+    height: 2.8rem;
+}
+main .recent-orders table tbody td{
+    border-bottom: 1px solid var(--color-light);
+}
+main .recent-orders table tbody tr:last-child td{
+    border: none;
+}
+main .recent-orders a{
+    display:block;
+    text-align: center;
+    color: var(--color-primary);
+    margin-top: 0.8rem;
+}
+/***********************************RIGHT-SECTION***********************************************/
+.right-section{
+    margin-right: 2.8rem;
+}
+.right-section .top{
+    display: flex;
+    justify-content: end;
+    gap:1.6rem;
+    margin-top: 0.88rem;
+    cursor: pointer;
+}
+.right-section .left{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.right-section .left .theme-toggler{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: var(--color-info-light);
+   height: 1.6rem;
+   width: 4.2rem;
+   border-radius: var(--border-radius-1);
+}
+.right-section .left .theme-toggler i{
+    font-size: 1.2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;align-items: center;
+    justify-content: center;
+}
+.right-section .left .theme-toggler i.active{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-1);
+}
+.right-section .left .menu-btn{
+    margin-right: 2rem;
+    display: none;
+}
+.right-section .right .profile{
+    display: flex;
+    gap: 0.88rem;
+}
+.right-section .right .profile .profile-photo{
+    width: 2.8em;
+    height: 2.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right-section .right .profile .profile-photo img{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right-section .right .profile h4{
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+/************************************************RECENT UPDATE*********************************************/
+.right-section .recent-updates h2{
+    margin-bottom: 0.88rem;
+}
+.right-section .recent-updates .updates{
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+.right-section .recent-updates .updates .update{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.right-section .recent-updates .updates .update .left .profile-photo{
+    width: 2.8em;
+    height: 2.8rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.right-section .recent-updates .updates .update .left .profile-photo img{
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius:50%;
+}
+.sales-analytics{
+    margin-top: 1.4rem;
+}
+.sales-analytics h2{
+
+    margin-bottom: 0.88rem;
+}
+.sales-analytics .analysis{
+    display: flex;
+    flex-direction: column;
+}
+.sales-analytics .analysis > div{
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1. 2rem;
+    margin-bottom: 0.8rem;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+.sales-analytics .analysis > div:hover{
+    box-shadow: none;
+}
+.sales-analytics .analysis > div .left-analysis{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    
+}
+.sales-analytics .analysis > div .right-analysis{
+    display: flex;
+    gap: 1rem;
+}
+
+.sales-analytics .analysis > div .profile-photo{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: var(--color-white);
+}
+.sales-analytics .analysis > div .profile-photo i{
+    font-size: 1.2rem;
+}
+.sales-analytics .analysis .online .profile-photo{
+    background-color: var(--color-primary);
+}
+.sales-analytics .analysis .offline .profile-photo{
+    background-color: var(--color-danger);
+}
+.sales-analytics .analysis .customer .profile-photo{
+    background-color: var(--color-success);
+}
+
+.sales-analytics .analysis .add-product{
+    background-color: var(--color-light);
+    border: 2px dashed var(--color-primary);
+    display: flex;
+    justify-content: center;
+    height: 3rem;
+}
+.sales-analytics .analysis .add-product .add{
+    display: flex;
+    gap: 1rem;
+}
+.sales-analytics .analysis .add-product .add i{
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+/*************************************MEDIA QUERIES********************************************************/
+/******************IPADS*************/
+@media screen and (max-width:1020px) {
+    .container{
+        width: 98%;
+    }
+    aside .top .logo{
+        margin-left: 0.88rem;
+    }
+    aside .top h2{
+        display: none;
+    }
+    aside .siderbar{
+        margin-left: 1.4rem;
+    }
+    aside .siderbar h3{
+        display: none;
+    }
+    main{
+        width: 98%;
+    }
+    main .insights{
+        display: grid;
+        grid-template-columns: (3, 1fr);
+    }
+    main .insights > div .middle{
+        justify-content: space-between;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+    main .recent-orders table thead tr  th:first-child {
+        display: none;
+    }
+    main .recent-orders table tbody  tr td:first-child{
+        display: none;
+    }
+    .right-section .top .right .profile .profile-details{
+        display: none;
+    }
+    .right-section .top .right .profile .profile-photo{
+        margin-bottom: 0.8rem;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .right-section .top .right .profile .profile-photo img{
+        width: 1.4rem;
+        height: 1.4rem;
+        
+    }
+}
+
+/******************************MOBILE****************************/
+@media screen and (max-width:786px){
+    .container{
+        width: 100%;
+        grid-template-columns:  1fr;
+    }
+    aside{
+        width: 18rem;
+        height: 100vh;
+        background-color: var(--color-white);
+        position: fixed;
+        left: 0;
+        z-index: 3;
+        padding-right: var(--card-padding);
+        display: none;
+
+    }
+    aside .top .close{
+        display: inline-block;
+        margin-right: 0.88rem;
+    }
+    aside .top .close i{
+        font-size: 1.4rem;
+    }
+    aside .siderbar a {
+        gap: 1rem;
+    }
+    aside .siderbar a h3{
+        display: block;
+    }
+    main{
+        width: 94%;
+        margin-left: 2rem;
+      
+    }
+    main h2{
+        margin-top: 4.2rem;
+    }
+
+ 
+    .right-section .top{
+        width: 100%;
+        height: 4.6rem;
+        background-color: var(--color-white);
+        z-index: 2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0 0.8rem;
+    }
+    .right-section .top .theme-toggler{
+        position:absolute;
+        left: 60%;
+        width: 4.4rem;
+        top: 0.5rem;
+        align-items: center;
+    }
+    .right-section .top .menu-btn{
+        width: 100%;
+        position: absolute;
+        left: 1rem;
+        top: 0.5rem;
+        display:inline-block;
+        color: var(--color-dark);
+        cursor: pointer;
+    }
+    .right-section .top .menu-btn i{
+        font-size: 1.5rem;
+       
+    }
+    .right-section .top .right .profile .profile-details .profile-photo{
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 0.5rem;
+    }
+    
+    .right-section .top .right .profile .profile-details{
+        display: none;
+    }
+    .right-section .recent-updates{
+        width: 94%;
+        margin-left: 2rem;
+    }
+    .right-section .sales-analytics{
+        width: 94%;
+        margin-left: 2rem;
+    }
+    
+}
